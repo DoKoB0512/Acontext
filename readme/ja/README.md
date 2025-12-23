@@ -51,16 +51,30 @@ Acontextは以下を支援できます：
 
 # 💡 主な機能
 
-- **コンテキストとartifactsを保存** 
-  - [Session](https://docs.acontext.io/store/messages/multi-provider): マルチモーダルメッセージストレージ
+- Context Engineering
+  - [Session](https://docs.acontext.io/store/messages/multi-provider): マルチモーダル LLM メッセージストレージ
   - [Disk](https://docs.acontext.io/store/disk): Artifacts用のファイルシステム
-- **コンテキストエンジニアリングを実行**
   - [Context Editing](https://docs.acontext.io/store/editing) - 1回の呼び出しでコンテキストエンジニアリング
+
+<div align="center">
+    <picture>
+      <img alt="Acontext Learning" src="../../assets/acontext-context-engineering.png" width="80%">
+    </picture>
+  <p>Acontext での Context Engineering</p>
+</div>
+
 - **エージェントタスクとユーザーフィードバックを観察**
   - [Task Agent](https://docs.acontext.io/observe/agent_tasks) - タスクのステータス、進捗、好みを収集するバックグラウンドエージェント
 - **エージェントの自己学習を有効化**
   - [Experience Agent](https://docs.acontext.io/learn/advance/experience-agent) - 各ユーザーのスキルを蒸留、保存、検索するバックグラウンドエージェント。
 - **すべてを1つの[ダッシュボード](https://docs.acontext.io/observe/dashboard)で表示**
+
+<div align="center">
+    <picture>
+      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="80%">
+    </picture>
+  <p>Agent 成功率とその他のメトリクスのダッシュボード</p>
+</div>
 
 
 
@@ -210,17 +224,14 @@ graph TB
 curl -fsSL https://install.acontext.io | sh
 ```
 
-コンピューターでAcontextバックエンドを起動するには、[docker-compose](https://docs.docker.com/compose/install/)がインストールされ、[OpenAI API Key](https://platform.openai.com/settings/organization/api-keys)が必要です：
+コンピューターでAcontextバックエンドを起動するには、[docker](https://www.docker.com/get-started/)がインストールされ、OpenAI API Keyが必要です：
 
 ```bash
 mkdir acontext_server && cd acontext_server
-
-# 1. このコマンドはインタラクティブなプロンプトを開始します
-# 2. openai api keyの入力が必要です
-acontext docker up 
+acontext docker up
 ```
 
-> [📖 ローカル設定](https://docs.acontext.io/local#start-acontext-server-locally) Acontextには少なくともOpenAI APIキーが必要です。LLMモデルとして`gpt-5.1`または`gpt-4.1`を推奨します
+> [📖 ローカル設定](https://docs.acontext.io/local#start-acontext-server-locally) LLMモデルとして`gpt-4.1`を推奨します
 
 `acontext docker up`は、Acontext用の`.env`と`config.yaml`を作成/使用し、データを永続化するための`db`フォルダを作成します。
 
@@ -230,15 +241,6 @@ acontext docker up
 
 - Acontext API Base URL: http://localhost:8029/api/v1
 - Acontext Dashboard: http://localhost:3000/
-
-
-
-<div align="center">
-    <picture>
-      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="100%">
-    </picture>
-  <p>成功率とその他のメトリクスのダッシュボード</p>
-</div>
 
 
 
@@ -272,7 +274,11 @@ acontext create my-proj --template-path "typescript/openai-basic"
 
 
 
-より多くのテンプレートについては、サンプルリポジトリを確認してください：[Acontext-Examples](https://github.com/memodb-io/Acontext-Examples)。
+> [!NOTE]
+>
+> Check our example repo for more templates: [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+>
+> We're cooking more full-stack Agent Applications! [Tell us what you want!](https://discord.acontext.io)
 
 
 

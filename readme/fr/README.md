@@ -51,16 +51,30 @@ Acontext peut vous aider à :
 
 # 💡 Fonctionnalités Principales
 
-- **Stocker les contextes et artefacts** 
-  - [Session](https://docs.acontext.io/store/messages/multi-provider): Stockage de Messages Multi-modal
+- Context Engineering
+  - [Session](https://docs.acontext.io/store/messages/multi-provider): Stockage de Messages LLM Multi-modal
   - [Disk](https://docs.acontext.io/store/disk): Système de fichiers pour les artefacts
-- **Faire de l'ingénierie de contexte pour vous**
   - [Context Editing](https://docs.acontext.io/store/editing) - Ingénierie de Contexte en un appel
+
+<div align="center">
+    <picture>
+      <img alt="Acontext Learning" src="../../assets/acontext-context-engineering.png" width="80%">
+    </picture>
+  <p>Context Engineering dans Acontext</p>
+</div>
+
 - **Observer les tâches des agents et les retours des utilisateurs**
   - [Task Agent](https://docs.acontext.io/observe/agent_tasks) - Agent en arrière-plan qui collecte le statut, la progression et les préférences de la tâche
 - **Permettre l'auto-apprentissage des agents**
   - [Experience Agent](https://docs.acontext.io/learn/advance/experience-agent) - Agents en arrière-plan qui distillent, sauvegardent et recherchent des compétences pour chaque utilisateur.
 - **Voir tout dans un [tableau de bord](https://docs.acontext.io/observe/dashboard)**
+
+<div align="center">
+    <picture>
+      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="80%">
+    </picture>
+  <p>Tableau de bord du Taux de Réussite de l'Agent et autres Métriques</p>
+</div>
 
 
 
@@ -210,17 +224,14 @@ Nous avons un `acontext-cli` pour vous aider à faire une preuve de concept rapi
 curl -fsSL https://install.acontext.io | sh
 ```
 
-Vous devriez avoir [docker-compose](https://docs.docker.com/compose/install/) installé et une [OpenAI API Key](https://platform.openai.com/settings/organization/api-keys) pour démarrer un backend Acontext sur votre ordinateur :
+Vous devriez avoir [docker](https://www.docker.com/get-started/) installé et une OpenAI API Key pour démarrer un backend Acontext sur votre ordinateur :
 
 ```bash
 mkdir acontext_server && cd acontext_server
-
-# 1. cette commande démarrera une invite interactive
-# 2. Elle nécessite que vous saisissiez votre openai api key
-acontext docker up 
+acontext docker up
 ```
 
-> [📖 configuration locale](https://docs.acontext.io/local#start-acontext-server-locally) Acontext nécessite au moins une Clé API OpenAI. Nous recommandons `gpt-5.1` ou `gpt-4.1` comme modèle LLM
+> [📖 configuration locale](https://docs.acontext.io/local#start-acontext-server-locally) Nous recommandons `gpt-4.1` comme modèle LLM
 
 `acontext docker up` créera/utilisera `.env` et `config.yaml` pour Acontext, et créera un dossier `db` pour persister les données.
 
@@ -230,15 +241,6 @@ Une fois terminé, vous pouvez accéder aux endpoints suivants :
 
 - Acontext API Base URL: http://localhost:8029/api/v1
 - Acontext Dashboard: http://localhost:3000/
-
-
-
-<div align="center">
-    <picture>
-      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="100%">
-    </picture>
-  <p>Tableau de bord du Taux de Réussite et autres Métriques</p>
-</div>
 
 
 
@@ -272,7 +274,11 @@ acontext create my-proj --template-path "typescript/openai-basic"
 
 
 
-Consultez notre dépôt d'exemples pour plus de modèles : [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+> [!NOTE]
+>
+> Check our example repo for more templates: [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+>
+> We're cooking more full-stack Agent Applications! [Tell us what you want!](https://discord.acontext.io)
 
 
 

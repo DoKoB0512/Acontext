@@ -51,16 +51,30 @@ Acontext는 다음을 도울 수 있습니다:
 
 # 💡 주요 기능
 
-- **컨텍스트 및 artifacts 저장** 
-  - [Session](https://docs.acontext.io/store/messages/multi-provider): 멀티 모달 메시지 저장소
+- Context Engineering
+  - [Session](https://docs.acontext.io/store/messages/multi-provider): 멀티 모달 LLM 메시지 저장소
   - [Disk](https://docs.acontext.io/store/disk): Artifacts용 파일 시스템
-- **컨텍스트 엔지니어링 수행**
   - [Context Editing](https://docs.acontext.io/store/editing) - 한 번의 호출로 컨텍스트 엔지니어링
+
+<div align="center">
+    <picture>
+      <img alt="Acontext Learning" src="../../assets/acontext-context-engineering.png" width="80%">
+    </picture>
+  <p>Acontext의 Context Engineering</p>
+</div>
+
 - **에이전트 작업 및 사용자 피드백 관찰**
   - [Task Agent](https://docs.acontext.io/observe/agent_tasks) - 작업의 상태, 진행 상황 및 선호도를 수집하는 백그라운드 에이전트
 - **에이전트 자기 학습 활성화**
   - [Experience Agent](https://docs.acontext.io/learn/advance/experience-agent) - 각 사용자를 위해 스킬을 추출, 저장 및 검색하는 백그라운드 에이전트.
 - **모든 것을 하나의 [대시보드](https://docs.acontext.io/observe/dashboard)에서 보기**
+
+<div align="center">
+    <picture>
+      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="80%">
+    </picture>
+  <p>Agent 성공률 및 기타 메트릭 대시보드</p>
+</div>
 
 
 
@@ -210,17 +224,14 @@ graph TB
 curl -fsSL https://install.acontext.io | sh
 ```
 
-컴퓨터에서 Acontext 백엔드를 시작하려면 [docker-compose](https://docs.docker.com/compose/install/)가 설치되어 있고 [OpenAI API Key](https://platform.openai.com/settings/organization/api-keys)가 있어야 합니다:
+컴퓨터에서 Acontext 백엔드를 시작하려면 [docker](https://www.docker.com/get-started/)가 설치되어 있고 OpenAI API Key가 있어야 합니다:
 
 ```bash
 mkdir acontext_server && cd acontext_server
-
-# 1. 이 명령은 대화형 프롬프트를 시작합니다
-# 2. openai api key 입력이 필요합니다
-acontext docker up 
+acontext docker up
 ```
 
-> [📖 로컬 설정](https://docs.acontext.io/local#start-acontext-server-locally) Acontext는 최소한 OpenAI API 키가 필요합니다. LLM 모델로 `gpt-5.1` 또는 `gpt-4.1`을 권장합니다
+> [📖 로컬 설정](https://docs.acontext.io/local#start-acontext-server-locally) LLM 모델로 `gpt-4.1`을 권장합니다
 
 `acontext docker up`은 Acontext용 `.env` 및 `config.yaml`을 생성/사용하고 데이터를 유지하기 위한 `db` 폴더를 생성합니다.
 
@@ -230,15 +241,6 @@ acontext docker up
 
 - Acontext API Base URL: http://localhost:8029/api/v1
 - Acontext Dashboard: http://localhost:3000/
-
-
-
-<div align="center">
-    <picture>
-      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="100%">
-    </picture>
-  <p>성공률 및 기타 메트릭 대시보드</p>
-</div>
 
 
 
@@ -272,7 +274,11 @@ acontext create my-proj --template-path "typescript/openai-basic"
 
 
 
-더 많은 템플릿은 예제 저장소를 확인하세요: [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+> [!NOTE]
+>
+> Check our example repo for more templates: [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+>
+> We're cooking more full-stack Agent Applications! [Tell us what you want!](https://discord.acontext.io)
 
 
 

@@ -51,16 +51,30 @@ Acontext может помочь вам:
 
 # 💡 Основные Функции
 
-- **Хранить контексты и artifacts** 
-  - [Session](https://docs.acontext.io/store/messages/multi-provider): Мультимодальное хранилище сообщений
+- Context Engineering
+  - [Session](https://docs.acontext.io/store/messages/multi-provider): Мультимодальное хранилище сообщений LLM
   - [Disk](https://docs.acontext.io/store/disk): Файловая система для artifacts
-- **Выполнять контекстный инжиниринг для вас**
   - [Context Editing](https://docs.acontext.io/store/editing) - Контекстный инжиниринг в один вызов
+
+<div align="center">
+    <picture>
+      <img alt="Acontext Learning" src="../../assets/acontext-context-engineering.png" width="80%">
+    </picture>
+  <p>Context Engineering в Acontext</p>
+</div>
+
 - **Наблюдать за задачами агентов и обратной связью пользователей**
   - [Task Agent](https://docs.acontext.io/observe/agent_tasks) - Фоновый агент, который собирает статус, прогресс и предпочтения задачи
 - **Обеспечивать самообучение агентов**
   - [Experience Agent](https://docs.acontext.io/learn/advance/experience-agent) - Фоновые агенты, которые извлекают, сохраняют и ищут навыки для каждого пользователя.
 - **Просматривать всё в одной [панели управления](https://docs.acontext.io/observe/dashboard)**
+
+<div align="center">
+    <picture>
+      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="80%">
+    </picture>
+  <p>Панель управления успешностью Agent и другими метриками</p>
+</div>
 
 
 
@@ -210,17 +224,14 @@ graph TB
 curl -fsSL https://install.acontext.io | sh
 ```
 
-У вас должен быть установлен [docker-compose](https://docs.docker.com/compose/install/) и [OpenAI API Key](https://platform.openai.com/settings/organization/api-keys) для запуска бэкенда Acontext на вашем компьютере:
+У вас должен быть установлен [docker](https://www.docker.com/get-started/) и OpenAI API Key для запуска бэкенда Acontext на вашем компьютере:
 
 ```bash
 mkdir acontext_server && cd acontext_server
-
-# 1. эта команда запустит интерактивное приглашение
-# 2. Требуется ввод вашего openai api key
-acontext docker up 
+acontext docker up
 ```
 
-> [📖 локальная настройка](https://docs.acontext.io/local#start-acontext-server-locally) Acontext требует как минимум ключ API OpenAI. Мы рекомендуем `gpt-5.1` или `gpt-4.1` в качестве модели LLM
+> [📖 локальная настройка](https://docs.acontext.io/local#start-acontext-server-locally) Мы рекомендуем `gpt-4.1` в качестве модели LLM
 
 `acontext docker up` создаст/использует `.env` и `config.yaml` для Acontext и создаст папку `db` для сохранения данных.
 
@@ -230,15 +241,6 @@ acontext docker up
 
 - Acontext API Base URL: http://localhost:8029/api/v1
 - Acontext Dashboard: http://localhost:3000/
-
-
-
-<div align="center">
-    <picture>
-      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="100%">
-    </picture>
-  <p>Панель управления успешностью и другими метриками</p>
-</div>
 
 
 
@@ -272,7 +274,11 @@ acontext create my-proj --template-path "typescript/openai-basic"
 
 
 
-Проверьте наш репозиторий примеров для большего количества шаблонов: [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+> [!NOTE]
+>
+> Check our example repo for more templates: [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+>
+> We're cooking more full-stack Agent Applications! [Tell us what you want!](https://discord.acontext.io)
 
 
 

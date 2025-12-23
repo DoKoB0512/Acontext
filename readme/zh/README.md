@@ -51,16 +51,30 @@ Acontext 可以帮助您：
 
 # 💡 核心功能
 
-- **存储上下文和artifacts** 
-  - [Session](https://docs.acontext.io/store/messages/multi-provider): 多模态消息存储
+- Context Engineering
+  - [Session](https://docs.acontext.io/store/messages/multi-provider): 多模态 LLM 消息存储
   - [Disk](https://docs.acontext.io/store/disk): Artifacts的文件系统
-- **为您进行上下文工程**
   - [Context Editing](https://docs.acontext.io/store/editing) - 一次调用完成上下文工程
+
+<div align="center">
+    <picture>
+      <img alt="Acontext Learning" src="../../assets/acontext-context-engineering.png" width="80%">
+    </picture>
+  <p>Acontext 中的 Context Engineering</p>
+</div>
+
 - **观察Agent任务和用户反馈**
   - [Task Agent](https://docs.acontext.io/observe/agent_tasks) - 后台Agent，收集任务的状态、进度和偏好
 - **启用Agent自我学习**
   - [Experience Agent](https://docs.acontext.io/learn/advance/experience-agent) - 后台Agent，为每个用户提炼、保存和搜索技能。
 - **在一个[仪表板](https://docs.acontext.io/observe/dashboard)中查看所有内容**
+
+<div align="center">
+    <picture>
+      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="80%">
+    </picture>
+  <p>Agent 成功率和其他指标的仪表板</p>
+</div>
 
 
 
@@ -210,17 +224,14 @@ graph TB
 curl -fsSL https://install.acontext.io | sh
 ```
 
-您应该安装 [docker-compose](https://docs.docker.com/compose/install/) 并拥有 [OpenAI API Key](https://platform.openai.com/settings/organization/api-keys)，以便在计算机上启动 Acontext 后端：
+您应该安装 [docker](https://www.docker.com/get-started/) 并拥有 OpenAI API Key，以便在计算机上启动 Acontext 后端：
 
 ```bash
 mkdir acontext_server && cd acontext_server
-
-# 1. 此命令将启动一个交互式提示
-# 2. 它需要您输入 openai api key
-acontext docker up 
+acontext docker up
 ```
 
-> [📖 本地设置](https://docs.acontext.io/local#start-acontext-server-locally) Acontext 至少需要一个 OpenAI API 密钥。我们推荐使用 `gpt-5.1` 或 `gpt-4.1` 作为 LLM 模型
+> [📖 本地设置](https://docs.acontext.io/local#start-acontext-server-locally) 我们推荐使用 `gpt-4.1` 作为 LLM 模型
 
 `acontext docker up` 将为 Acontext 创建/使用 `.env` 和 `config.yaml`，并创建 `db` 文件夹来持久化数据。
 
@@ -230,15 +241,6 @@ acontext docker up
 
 - Acontext API Base URL: http://localhost:8029/api/v1
 - Acontext Dashboard: http://localhost:3000/
-
-
-
-<div align="center">
-    <picture>
-      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="100%">
-    </picture>
-  <p>成功率和其他指标的仪表板</p>
-</div>
 
 
 
@@ -272,7 +274,11 @@ acontext create my-proj --template-path "typescript/openai-basic"
 
 
 
-查看我们的示例仓库以获取更多模板：[Acontext-Examples](https://github.com/memodb-io/Acontext-Examples)。
+> [!NOTE]
+>
+> Check our example repo for more templates: [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+>
+> We're cooking more full-stack Agent Applications! [Tell us what you want!](https://discord.acontext.io)
 
 
 

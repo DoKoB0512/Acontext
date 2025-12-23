@@ -51,16 +51,30 @@ Acontext puede ayudarte a:
 
 # 💡 Características Principales
 
-- **Almacenar contextos y artifacts** 
-  - [Session](https://docs.acontext.io/store/messages/multi-provider): Almacenamiento de Mensajes Multi-modal
+- Context Engineering
+  - [Session](https://docs.acontext.io/store/messages/multi-provider): Almacenamiento de Mensajes Multi-modal LLM
   - [Disk](https://docs.acontext.io/store/disk): Sistema de archivos para artifacts
-- **Hacer ingeniería de contexto para ti**
   - [Context Editing](https://docs.acontext.io/store/editing) - Ingeniería de Contexto en una llamada
+
+<div align="center">
+    <picture>
+      <img alt="Acontext Learning" src="../../assets/acontext-context-engineering.png" width="80%">
+    </picture>
+  <p>Ingeniería de Contexto en Acontext</p>
+</div>
+
 - **Observar tareas de agentes y retroalimentación del usuario**
   - [Task Agent](https://docs.acontext.io/observe/agent_tasks) - Agente en segundo plano que recopila el estado, progreso y preferencias de la tarea
 - **Habilitar autoaprendizaje de agentes**
   - [Experience Agent](https://docs.acontext.io/learn/advance/experience-agent) - Agentes en segundo plano que destilan, guardan y buscan habilidades para cada usuario.
 - **Ver todo en un [dashboard](https://docs.acontext.io/observe/dashboard)**
+
+<div align="center">
+    <picture>
+      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="80%">
+    </picture>
+  <p>Dashboard de Tasa de Éxito de Agent y Otras Métricas</p>
+</div>
 
 
 
@@ -210,17 +224,14 @@ Tenemos un `acontext-cli` para ayudarte a hacer una prueba de concepto rápida. 
 curl -fsSL https://install.acontext.io | sh
 ```
 
-Deberías tener [docker-compose](https://docs.docker.com/compose/install/) instalado y una [OpenAI API Key](https://platform.openai.com/settings/organization/api-keys) para iniciar un backend de Acontext en tu computadora:
+Deberías tener [docker](https://www.docker.com/get-started/) instalado y una OpenAI API Key para iniciar un backend de Acontext en tu computadora:
 
 ```bash
 mkdir acontext_server && cd acontext_server
-
-# 1. este comando iniciará un prompt interactivo
-# 2. Requiere que ingreses tu openai api key
-acontext docker up 
+acontext docker up
 ```
 
-> [📖 configuración local](https://docs.acontext.io/local#start-acontext-server-locally) Acontext requiere al menos una Clave API de OpenAI. Recomendamos `gpt-5.1` o `gpt-4.1` como modelo LLM
+> [📖 configuración local](https://docs.acontext.io/local#start-acontext-server-locally) Recomendamos `gpt-4.1` como modelo LLM
 
 `acontext docker up` creará/usará `.env` y `config.yaml` para Acontext, y creará una carpeta `db` para persistir datos.
 
@@ -230,15 +241,6 @@ Una vez completado, puedes acceder a los siguientes endpoints:
 
 - Acontext API Base URL: http://localhost:8029/api/v1
 - Acontext Dashboard: http://localhost:3000/
-
-
-
-<div align="center">
-    <picture>
-      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="100%">
-    </picture>
-  <p>Dashboard de Tasa de Éxito y otras Métricas</p>
-</div>
 
 
 
@@ -272,7 +274,11 @@ acontext create my-proj --template-path "typescript/openai-basic"
 
 
 
-Consulta nuestro repositorio de ejemplos para más plantillas: [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+> [!NOTE]
+>
+> Check our example repo for more templates: [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+>
+> We're cooking more full-stack Agent Applications! [Tell us what you want!](https://discord.acontext.io)
 
 
 

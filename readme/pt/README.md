@@ -50,16 +50,30 @@ Acontext pode ajudá-lo a:
 
 # 💡 Principais Recursos
 
-- **Armazenar contextos & artifacts** 
-  - [Session](https://docs.acontext.io/store/messages/multi-provider): Armazenamento de Mensagens Multi-modal
+- Context Engineering
+  - [Session](https://docs.acontext.io/store/messages/multi-provider): Armazenamento de Mensagens LLM Multi-modal
   - [Disk](https://docs.acontext.io/store/disk): Sistema de arquivos para artifacts
-- **Fazer engenharia de contexto para você**
   - [Context Editing](https://docs.acontext.io/store/editing) - Engenharia de Contexto em uma chamada
+
+<div align="center">
+    <picture>
+      <img alt="Acontext Learning" src="../../assets/acontext-context-engineering.png" width="80%">
+    </picture>
+  <p>Context Engineering no Acontext</p>
+</div>
+
 - **Observar tarefas de agentes e feedback do usuário**
   - [Task Agent](https://docs.acontext.io/observe/agent_tasks) - Agente em segundo plano que coleta status, progresso e preferências da tarefa
 - **Habilitar autoaprendizado de agentes**
   - [Experience Agent](https://docs.acontext.io/learn/advance/experience-agent) - Agentes em segundo plano que destilam, salvam e pesquisam habilidades para cada usuário.
 - **Visualizar tudo em um [dashboard](https://docs.acontext.io/observe/dashboard)**
+
+<div align="center">
+    <picture>
+      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="80%">
+    </picture>
+  <p>Painel de Taxa de Sucesso do Agent e Outras Métricas</p>
+</div>
 
 
 
@@ -216,7 +230,7 @@ mkdir acontext_server && cd acontext_server
 acontext docker up
 ```
 
-> [📖 configuração local](https://docs.acontext.io/local#start-acontext-server-locally) Acontext requer pelo menos uma Chave API OpenAI. Recomendamos `gpt-5.1` ou `gpt-4.1` como modelo LLM
+> [📖 configuração local](https://docs.acontext.io/local#start-acontext-server-locally) Recomendamos `gpt-4.1` como modelo LLM
 
 `acontext docker up` criará/usará `.env` e `config.yaml` para Acontext, e criará uma pasta `db` para persistir dados.
 
@@ -226,15 +240,6 @@ Quando terminar, você pode acessar os seguintes endpoints:
 
 - Acontext API Base URL: http://localhost:8029/api/v1
 - Acontext Dashboard: http://localhost:3000/
-
-
-
-<div align="center">
-    <picture>
-      <img alt="Dashboard" src="../../docs/images/dashboard/BI.png" width="100%">
-    </picture>
-  <p>Painel de Taxa de Sucesso e outras Métricas</p>
-</div>
 
 
 
@@ -268,7 +273,11 @@ acontext create my-proj --template-path "typescript/openai-basic"
 
 
 
-Confira nosso repositório de exemplos para mais modelos: [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+> [!NOTE]
+>
+> Check our example repo for more templates: [Acontext-Examples](https://github.com/memodb-io/Acontext-Examples).
+>
+> We're cooking more full-stack Agent Applications! [Tell us what you want!](https://discord.acontext.io)
 
 
 
